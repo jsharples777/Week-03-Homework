@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+        <div class="password-length">
+          <h3>Choose a password length:</h3>
+          <!-- ensure the user can only choose between 8 and 128 characters  -->
+          <input type="range" id="pLength" min="8" max="128" step="1"/>
+          <span id="pLengthDisplay">8</span> 
+        </div>
+        <div class="password-character-types">
+          <h3>Choose at least one character type for the password</h3>
+          <!-- Show the possible character types for the password generator -->
+          <div class="choose-character-types">
+            <span class="character-type-choice">
+              <label for="useLowerCase">Lower case (abcd...):</label>
+              <input type="checkbox" id="useLowerCase" name="useLowerCase" value="1" checked/>
+            </span>  
+            <span class="character-type-choice">
+              <label for="useUpperCase">Upper case (ABCD...):</label>
+              <input type="checkbox" id="useUpperCase" name="useUpperCase" value="1" checked/>
+            </span>  
+            <span class="character-type-choice">
+              <label for="useNumeric">Numbers (0123...):</label>
+              <input type="checkbox" id="useNumeric" name="useNumeric" value="1" checked/>
+            </span>  
+            <span class="character-type-choice">
+              <label for="useSymbol">Symbols (!@#$...):</label>
+              <input type="checkbox" id="useSymbol" name="useSymbol" value="1" checked/>
+            </span>  
+          </div>
+        </div>
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+        <div class="card-footer">
+          <button id="generate" class="btn">Generate Password</button>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/passwordgenerator.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
