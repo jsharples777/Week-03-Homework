@@ -1,5 +1,5 @@
 /* simple debugging code using console log */
-let debug = false;
+let debug = true;
 
 let log = function(message) {
   if (debug) {
@@ -8,13 +8,12 @@ let log = function(message) {
 }
 
 
-log("Started Event Handlers")
+
+log("Started Event Handlers");
 
 /* setup the display of the slider value for the password length */
 let passwordLengthElement = this.document.getElementById("pLength");
 let displaySpanElement = this.document.getElementById("pLengthDisplay");
-
-passwordLengthElement.value="8"; // set initial value of the slider for password length;
 
 let pLengthDisplayHandler = function(event) {
   log("Changed value to " + passwordLengthElement.value);
@@ -31,6 +30,7 @@ let useNumericElement = this.document.getElementById("useNumeric");
 let useSymbolElement = this.document.getElementById("useSymbol");
 
 let generateButtonElement = this.document.getElementById("generate");
+let characterTypeWarning =this.document.getElementById("passwordWarning");
 
 let checkValidationHandler = function(event) {
   let isLowerCaseChecked = useLowerCaseElement.checked;
@@ -43,10 +43,12 @@ let checkValidationHandler = function(event) {
       (!isNumericChecked) &&
       (!isSymbolChecked)) {
         generateButtonElement.disabled = true;
+        characterTypeWarning.style.display = "block";
         log("Validation Handler: no checkbox selected");
     }
     else {
       generateButtonElement.disabled = false;
+      characterTypeWarning.style.display = "none";
       log("Validation Handler: at least one checkboxes selected");
     }
 }

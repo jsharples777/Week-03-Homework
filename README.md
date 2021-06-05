@@ -15,6 +15,7 @@ THEN I select which criteria to include in the password
 THEN I choose a length of at least 8 characters and no more than 128 characters
 THEN I choose lowercase, uppercase, numeric, and/or special characters
 THEN my input should be validated and at least one character type should be selected
+IF my input is not valid I cannot generate a password and should have a warning about what is invalid
 WHEN I click the button to generate a password
 THEN a password is generated that matches the selected criteria
 WHEN the password is generated

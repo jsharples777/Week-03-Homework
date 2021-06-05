@@ -58,24 +58,19 @@ header {
 .password-character-types {
   font-size: 14px;
   text-align: left;
+
 }
 
-.choose-character-types {
-  display:flex;
-  flex-wrap:wrap;
-  max-width:400px;
-  padding-bottom: 20px;
-  align-items: flex-end;
+
+
+
+.borderinset {
+  border:inset;
+  padding: 10px 10px 10px 10px;
 }
 
-.character-type-choice {
-  font-size: 14px;
-  justify-content: flex-end;
-  flex: 1 0 50%;
-}
-
-.character-type-choice label {
-  text-align: right;
+.warning-hidden {
+  display:none;
 }
 
 
@@ -121,6 +116,7 @@ header {
 .btn:disabled {
   background-color: lightgray;
   font-style: italic;
+  cursor: default;
 }
 
 .btn:enabled {
@@ -128,10 +124,6 @@ header {
   font-style:normal;
 }
 
-button[disabled] {
-  cursor: default;
-  background: #c0c7cf;
-}
 
 .float-right {
   float: right;
@@ -148,7 +140,7 @@ button[disabled] {
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 85px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;

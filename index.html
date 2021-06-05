@@ -2,12 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Password Generator</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+    <!-- Try use of Bootstrap framework -->
     <div class="wrapper">
       <header>
         <h1>Password Generator</h1>
@@ -16,33 +23,58 @@
         <div class="card-header">
           <h2>Generate a Password</h2>
         </div>
-        <div class="password-length">
-          <h3>Choose a password length:</h3>
+        <h3>Choose a password length:</h3>
+        <div class="container-fluid text-right">
+          <div class="row">
+            <div class="col-sm-11">
+              <input type="range" id="pLength" min="8" max="128" step="1" value="8"/>
+            </div>
+            <div class="col-sm-1">
+              <span id="pLengthDisplay">8</span> 
+            </div>
+          </div>
+          
           <!-- ensure the user can only choose between 8 and 128 characters  -->
-          <input type="range" id="pLength" min="8" max="128" step="1"/>
-          <span id="pLengthDisplay">8</span> 
+          
         </div>
         <div class="password-character-types">
-          <h3>Choose at least one character type for the password:</h3>
-          <!-- Show the possible character types for the password generator -->
-          <div class="choose-character-types">
-            <div class="character-type-choice">
-              <label for="useLowerCase">Lower case (abcd...):</label>
-              <input type="checkbox" id="useLowerCase" name="useLowerCase" value="1" checked/>
-            </div>  
-            <div class="character-type-choice">
-              <label for="useUpperCase">Upper case (ABCD...):</label>
-              <input type="checkbox" id="useUpperCase" name="useUpperCase" value="1" checked/>
-            </div>  
-            <div class="character-type-choice">
-              <label for="useNumeric">Numbers (0123...):</label>
-              <input type="checkbox" id="useNumeric" name="useNumeric" value="1" checked/>
-            </div>  
-            <div class="character-type-choice">
-              <label for="useSymbol">Symbols (!@#$...):</label>
-              <input type="checkbox" id="useSymbol" name="useSymbol" value="1" checked/>
-            </div>  
+          <h3>Character type(s) for the password:</h3>
+          <div class="container-fluid borderinset">
+            <div class="row">
+              <div class="col-sm-4 text-right">
+                <label for="useLowerCase">Lower case (abcd...):</label> 
+              </div>
+              <div class="col-sm-2">
+                <input type="checkbox" id="useLowerCase" name="useLowerCase" value="1" checked/>
+              </div>
+              <div class="col-sm-4 text-right">
+                <label for="useUpperCase">Upper case (ABCD...):</label> 
+              </div>
+              <div class="col-sm-2">
+                <input type="checkbox" id="useUpperCase" name="useUpperCase" value="1" checked/>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 text-right">
+                <label for="useLowerCase">Numbers (0123...):</label> 
+              </div>
+              <div class="col-sm-2">
+                <input type="checkbox" id="useNumeric" name="useNumeric" value="1" checked/>
+              </div>
+              <div class="col-sm-4 text-right">
+                <label for="useSymbol">Symbols (!@#$...):</label> 
+              </div>
+              <div class="col-sm-2">
+                <input type="checkbox" id="useSymbol" name="useSymbol" value="1" checked/>
+              </div>
+            </div>
+            <div id="passwordWarning" class="row warning-hidden">
+              <div class="col-sm-12 text-center text-warning">
+                <span>Please choose at least one character type for the password.</span>
+              </div>
+            </div>
           </div>
+
         </div>
         <div class="card-body">
           <textarea
