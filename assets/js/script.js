@@ -19,11 +19,11 @@ let pLengthDisplayHandler = function(event) {
   log("Changed value to " + passwordLengthElement.value);
   displaySpanElement.innerText = passwordLengthElement.value;
 }
-
+/* add event handlers to change the number displayed next to the length slider */
 passwordLengthElement.onchange = pLengthDisplayHandler;
 passwordLengthElement.oninput = pLengthDisplayHandler;
 
-/* setup the validation of the checkboxes to ensure at least is selected */
+
 let useLowerCaseElement = this.document.getElementById("useLowerCase");
 let useUpperCaseElement = this.document.getElementById("useUpperCase");
 let useNumericElement = this.document.getElementById("useNumeric");
@@ -31,7 +31,7 @@ let useSymbolElement = this.document.getElementById("useSymbol");
 
 let generateButtonElement = this.document.getElementById("generate");
 let characterTypeWarning =this.document.getElementById("passwordWarning");
-
+/* setup the validation of the checkboxes to ensure at least is selected */
 let checkValidationHandler = function(event) {
   let isLowerCaseChecked = useLowerCaseElement.checked;
   let isUpperCaseChecked = useUpperCaseElement.checked;

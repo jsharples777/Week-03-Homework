@@ -32,6 +32,7 @@ class PasswordGenerator {
 
         let options = [0,0,0,0]; // the four options are off initially;
 
+        /* lets "turn on" the options that have been selected */
         if (useLowerCaseAlphabet) {
             options[numberOfOptionsForCharacter] = 1; // 1 is lowercase
             numberOfOptionsForCharacter++;
@@ -50,7 +51,7 @@ class PasswordGenerator {
             options[numberOfOptionsForCharacter] = 4; // 4 is symbol
             numberOfOptionsForCharacter++;
         }
-
+        /* randomly choose one of the options and find out which character type it is */
         let randomOptionChosen = Math.floor(Math.random() * numberOfOptionsForCharacter);
         let chosenCharacterGenerator = options[randomOptionChosen];
 
@@ -62,7 +63,10 @@ class PasswordGenerator {
         }
 
     }
-
+    /* Generate a password
+        1.  Of length supplied;
+        2.  With one or more character types chosen.
+     */
     generate (length,useLowerCaseAlphabet,useUpperCaseAlphabet,useDigits,useSymbols) {
         if (useLowerCaseAlphabet === undefined) {
             useLowerCaseAlphabet = true;
